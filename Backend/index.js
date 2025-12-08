@@ -1,11 +1,15 @@
 const express = require ('express');
 const app = express();
+const cors = require("cors");
 const connectDB = require('./db')
 const userRouter = require('./Routes/userRoutes')
 const productRouter = require('./Routes/productRoutes')
 const cartRouter = require('./Routes/cartRoutes')
 const loginRouter = require('./Routes/loginRoutes')
 const getAllCartItems = require('./Routes/AllCartItemsRoutes')
+const SignUpRouter = require('./Routes/SignupRoute')
+
+app.use(cors());
 
 require('dotenv').config();
 
@@ -20,6 +24,7 @@ app.use('/api/products',productRouter)
 app.use('/api/cart',cartRouter)
 app.use('/api/login',loginRouter)
 app.use('/api/getAllCartItems',getAllCartItems)
+app.use('/api/signUp',SignUpRouter)
 
 
 

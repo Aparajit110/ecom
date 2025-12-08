@@ -16,7 +16,7 @@ const NavBar = () => {
 
       <div className="flex items-center justify-center gap-4 ">
         <button onClick={()=>navigate("/SignUp")} className="p-2 text-white bg-blue-500 rounded-md">Sign Up</button>
-        <button className="p-2 text-white bg-green-500 rounded-md">Login</button>
+        <button onClick={()=>navigate("/login")} className="p-2 text-white bg-green-500 rounded-md">Login</button>
       </div>
 
       <button className="p-2 text-white bg-yellow-500 rounded-md">Cart</button>
