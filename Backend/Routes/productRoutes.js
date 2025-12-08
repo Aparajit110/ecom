@@ -2,6 +2,7 @@ const express = require ('express')
 const router = express.Router()
 const ProductModel =require ('../Model/ProductModel.js')
 
+
 router.post('/', async(req,res)=>{
     
     try{

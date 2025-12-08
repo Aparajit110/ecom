@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const Cart = require ('../Model/CartModel')
-
-router.post('/',async(req,res)=>{
+const auth = require ('../Middleware/auth.js')
+router.post('/', auth, async(req,res)=>{
     try{
         const {productId , quantity} = req.body;
         const userId =  req.user.id;

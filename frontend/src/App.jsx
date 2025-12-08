@@ -1,14 +1,26 @@
 
-import './App.css'
+
+import { Route, Routes } from 'react-router-dom'
+import Footer from './components/Footer'
+import Hero from './components/Hero'
+import NavBar from './components/NavBar'
+import SignUp from './Pages/SignUp.jsx'
+
 
 function App() {
  
 
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <>
+    <NavBar/>
+    <Routes>
+      <Route path='/' element={<Hero/>}/>
+      <Route path='/SignUp' element={<SignUp/>}/>
+    </Routes>
+    <Footer/>
+    </>
   )
+  
 }
 
 export default App

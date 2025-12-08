@@ -1,8 +1,9 @@
 const express = require ('express')
 const router = express.Router()
 const Cart = require('../Model/CartModel') //get all the cart access
+const auth = require('../Middleware/auth')
 
-router.get('/',async(req,res)=>{
+router.get('/',auth,async(req,res)=>{
     try{
     // the requires cart =
     const userId = req.user._id;

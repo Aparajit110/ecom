@@ -6,6 +6,7 @@ const productRouter = require('./Routes/productRoutes')
 const cartRouter = require('./Routes/cartRoutes')
 const loginRouter = require('./Routes/loginRoutes')
 const getAllCartItems = require('./Routes/AllCartItemsRoutes')
+
 require('dotenv').config();
 
 connectDB();
@@ -19,6 +20,7 @@ app.use('/api/products',productRouter)
 app.use('/api/cart',cartRouter)
 app.use('/api/login',loginRouter)
 app.use('/api/getAllCartItems',getAllCartItems)
+
 
 
 app.listen(PORT,()=>{

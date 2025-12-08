@@ -14,12 +14,12 @@ router.post('/', async (req,res)=>{
     const hashedPassword = await bcrypt.hash(password,10);
 
    try{
-    const newUser = User.create({
+    const newUser = await User.create({
         username,
         email,
         password : hashedPassword
     });
-    res.status(201).json(`new user created ${newUser}`)
+    res.status(201).json({message : "New user created", user: newUser })
    }
    catch(error){
     res.status(500).json(`user not created ${error}`)
