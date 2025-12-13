@@ -5,11 +5,12 @@ import axios from "axios";
 
 
 
-const NavBar = () => {
+const NavBar = ({openCart}) => {
 
   const navigate=useNavigate();
 
   const [Filter , setFilter] = useState("");
+  
 
   const Handler = async (e)=>{
       const value = e.target.value;
@@ -18,8 +19,14 @@ const NavBar = () => {
 
       const prod = await axios.get("http://localhost:8000/api/prodSearch",{params : {name : Filter}})
 
-      navigate("/search" , {state : {product : prod.data}})
+     if (prod.data && prod.data.length > 0) {
+     navigate("/search", { state: { product: prod.data } });
+      }
   }
+
+ 
+
+ 
   
 
   
@@ -40,7 +47,7 @@ const NavBar = () => {
         <button onClick={()=>navigate("/login")} className="p-2 text-white bg-green-500 rounded-md">Login</button>
       </div>
 
-      <button className="p-2 text-white bg-yellow-500 rounded-md">Cart</button>
+      <button onClick={openCart} className="p-2 text-white bg-yellow-500 rounded-md">Cart</button>
     </div>
   )
 }
