@@ -8,6 +8,7 @@ const cartRouter = require('./Routes/cartRoutes')
 const loginRouter = require('./Routes/loginRoutes')
 const getAllCartItems = require('./Routes/AllCartItemsRoutes')
 const SignUpRouter = require('./Routes/SignupRoute')
+const ProdSearch = require('./Routes/ProductSearch')
 
 app.use(cors());
 
@@ -25,6 +26,7 @@ app.use('/api/cart',cartRouter)
 app.use('/api/login',loginRouter)
 app.use('/api/getAllCartItems',getAllCartItems)
 app.use('/api/signUp',SignUpRouter)
+app.use('/api/prodSearch',ProdSearch)
 
 
 

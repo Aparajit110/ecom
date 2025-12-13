@@ -14,23 +14,26 @@ router.post('/', async (req,res)=>{
         return res.status(400).json({message : "Invalid email"})
     }
 
-    console.log(email,password,user.password);
 
 
     const isMatch =  bcrypt.compare(password,user.password)
     if(!isMatch)  return res.status(400).json({message : "Inavlid password"})
 
-        console.log("succes")
+       
 
     const token = jwt.sign(
         {id : user._id},
         process.env.JWT_SECRET
     )
 
+   
+
     res.json({
         message : 'login successfully',
-        token 
+        token
     })
+
+   
 
 })
 

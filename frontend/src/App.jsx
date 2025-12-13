@@ -7,6 +7,8 @@ import NavBar from './components/NavBar'
 import SignUp from './Pages/SignUp.jsx'
 import Login from './Pages/Login.jsx'
 import Products from './Pages/Products.jsx'
+import SearchPage from './Pages/SearchPage.jsx'
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
       <Route path='/SignUp' element={<SignUp/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/phones' element={<Products/>}/>
+      <Route path='/search' element={<SearchPage/>}/>
     </Routes>
     <Footer/>
     </>

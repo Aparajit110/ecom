@@ -7,7 +7,7 @@ const Products = () => {
     <div className='w-screen min-h-80'>
         <h1 className='text-2xl'>Results</h1>
         {productData.map(item=>(
-            <ProductCard key={item.id}   productImg={item.image} Title={item.desc} Price={item.price} name={item.name} />
+            <ProductCard key={item.id}  productImg={item.image} Title={item.desc} Price={item.price} name={item.name} />
         ))}
             
     </div>
